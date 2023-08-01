@@ -1,0 +1,53 @@
+﻿<UserControl x:Class="ApiUserCrud.Wpf.Views.UsersView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ApiUserCrud.Wpf.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        
+        <DataGrid Grid.Row="0" Name="UsersDatagrid" ItemsSource="{Binding Users}" AutoGenerateColumns="False" CanUserAddRows="false">
+            <DataGrid.Columns>
+                <DataGridTextColumn Width="50" Header="{StaticResource id}" Binding="{Binding Id}"></DataGridTextColumn>
+                <DataGridTextColumn Width="*" Header="{StaticResource firstname}" Binding="{Binding FirstName}"></DataGridTextColumn>
+                <DataGridTextColumn Width="*" Header="{StaticResource lastname}" Binding="{Binding LastName}"></DataGridTextColumn>
+                <DataGridTextColumn Width="*" Header="{StaticResource email}" Binding="{Binding Email}"></DataGridTextColumn>
+                <DataGridTemplateColumn Width="50">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button  Name="buttonUpdateUser" Width="50" CommandParameter="{Binding}" Command="{Binding RelativeSource={RelativeSource AncestorType={x:Type DataGrid},Mode=FindAncestor},Path=DataContext.NavigateUpdateUserCommand}">
+                                <TextBlock Text="{StaticResource update}"></TextBlock>
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Width="50">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Name="buttonDeleteUser" Width="50" CommandParameter="{Binding}" Command="{Binding RelativeSource={RelativeSource AncestorType={x:Type UserControl},Mode=FindAncestor},Path=DataContext.NavigateDeleteUserCommand}">
+                                <TextBlock Text="{StaticResource delete}"></TextBlock>
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Column="1" Height="50" Width="200" Name="buttonAddUser" Command="{Binding NavigateAddUsersCommand}">
+                <TextBlock Text="{StaticResource add}"></TextBlock>
+            </Button>
+        </Grid>  
+    </Grid>
+</UserControl>

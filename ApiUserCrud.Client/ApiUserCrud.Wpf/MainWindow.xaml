@@ -1,0 +1,28 @@
+﻿<Window x:Class="ApiUserCrud.Wpf.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:viewmodels="clr-namespace:ApiUserCrud.WpfUtils.ViewModels;assembly=ApiUserCrud.WpfUtils"
+        xmlns:views="clr-namespace:ApiUserCrud.Wpf.Views"
+        xmlns:modalcontrol="clr-namespace:ApiUserCrud.Modal;assembly=ApiUserCrud.Modal"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.Resources>
+            <DataTemplate DataType="{x:Type viewmodels:UsersViewModel}">
+                <views:UsersView></views:UsersView>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:AddUserViewModel}">
+                <views:AddUserView></views:AddUserView>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:DeleteUserConfirmationViewModel}">
+                <views:DeleteUserConfirmationView></views:DeleteUserConfirmationView>
+            </DataTemplate>
+        </Grid.Resources>
+        <modalcontrol:Modal IsOpen="{Binding IsModalOpen}" Panel.ZIndex="1" BorderBrush="Black" BorderThickness="1">
+            <ContentControl Content="{Binding CurrentModalViewModel}"></ContentControl>
+        </modalcontrol:Modal>
+        <ContentControl Content="{Binding CurrentViewModel}"></ContentControl>
+    </Grid>
+</Window>

@@ -1,0 +1,23 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+    
+    <system:String x:Key="id">ID</system:String>
+    <system:String x:Key="firstname">First Name</system:String>
+    <system:String x:Key="lastname">Last Name</system:String>
+    <system:String x:Key="email">Email</system:String>
+    <system:String x:Key="delete">Delete</system:String>
+    <system:String x:Key="update">Update</system:String>
+    <system:String x:Key="add">Add</system:String>
+    <system:String x:Key="addusertitle">Add New User</system:String>
+    <system:String x:Key="deleteconfirmation">Do you want to delete this user?</system:String>
+    <system:String x:Key="deletedone">User has been deleted</system:String>
+    <system:String x:Key="updateconfirmation">Do you want to update this user?</system:String>
+    <system:String x:Key="updatedone">User has been updated</system:String>
+    <system:String x:Key="updateusertitle">Update User</system:String>
+    <system:String x:Key="addconfirmation">Do you want to add this user?</system:String>
+    <system:String x:Key="adddone">User has been added</system:String>
+    <system:String x:Key="cancel">Cancel</system:String>
+    <system:String x:Key="yes">Yes</system:String>
+    <system:String x:Key="no">No</system:String>
+</ResourceDictionary>
