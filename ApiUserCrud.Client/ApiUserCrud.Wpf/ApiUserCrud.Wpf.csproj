@@ -13,12 +13,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ApiUserCrud.Client.BusinessLogic\ApiUserCrud.Client.BusinessLogic.csproj" />
+    <ProjectReference Include="..\ApiUserCrud.Client.DataAccess\ApiUserCrud.Client.DataAccess.csproj" />
     <ProjectReference Include="..\ApiUserCrud.Modal\ApiUserCrud.Modal.csproj" />
-    <ProjectReference Include="..\ApiUserCrud.WpfUtils\ApiUserCrud.WpfUtils.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Views\AddUserView.xaml.cs">
+    <Compile Update="Views\UserView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\UsersView.xaml.cs">

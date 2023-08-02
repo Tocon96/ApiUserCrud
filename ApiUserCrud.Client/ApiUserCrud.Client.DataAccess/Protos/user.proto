@@ -1,0 +1,59 @@
+syntax = "proto3";
+
+option csharp_namespace = "ApiUserCrud.Client.DataAccess";
+
+package user;
+
+service UserGrpc {
+	rpc AddUser (AddUserDetails) returns (AddUserId);
+	rpc UpdateUser (UpdateUserDetails) returns (UpdateUserId);
+	rpc DeleteUser (DeleteUserId) returns (DeleteUserConfirmation);
+	rpc GetUser (GetUserId) returns (GetUserDetails);
+	rpc GetUsers (Empty) returns (GetUsersDetails);
+}
+
+message UserGrpcModel{
+	int32 id = 1;
+	string firstName = 2;
+	string lastName = 3;
+	string email = 4;
+}
+
+message AddUserDetails {
+  UserGrpcModel user = 1;
+}
+
+message AddUserId {
+  int32 id = 1;
+}
+
+message UpdateUserDetails {
+  UserGrpcModel user = 1;
+}
+
+message UpdateUserId {
+  int32 id = 1;
+}
+
+message DeleteUserId {
+  int32 id = 1;
+}
+
+message DeleteUserConfirmation {
+	bool deleted = 1;
+}
+
+message GetUserId {
+	int32 id = 1;
+}
+
+message GetUserDetails{
+	UserGrpcModel user = 1;
+}
+
+message Empty{
+}
+
+message GetUsersDetails{
+	repeated UserGrpcModel user = 1; 
+}

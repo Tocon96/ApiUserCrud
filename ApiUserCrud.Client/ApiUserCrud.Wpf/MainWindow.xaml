@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:viewmodels="clr-namespace:ApiUserCrud.WpfUtils.ViewModels;assembly=ApiUserCrud.WpfUtils"
+        xmlns:viewmodels="clr-namespace:ApiUserCrud.Client.BusinessLogic.ViewModels;assembly=ApiUserCrud.Client.BusinessLogic"
         xmlns:views="clr-namespace:ApiUserCrud.Wpf.Views"
         xmlns:modalcontrol="clr-namespace:ApiUserCrud.Modal;assembly=ApiUserCrud.Modal"
         mc:Ignorable="d"
@@ -13,8 +13,8 @@
             <DataTemplate DataType="{x:Type viewmodels:UsersViewModel}">
                 <views:UsersView></views:UsersView>
             </DataTemplate>
-            <DataTemplate DataType="{x:Type viewmodels:AddUserViewModel}">
-                <views:AddUserView></views:AddUserView>
+            <DataTemplate DataType="{x:Type viewmodels:UserViewModel}">
+                <views:UserView></views:UserView>
             </DataTemplate>
             <DataTemplate DataType="{x:Type viewmodels:DeleteUserConfirmationViewModel}">
                 <views:DeleteUserConfirmationView></views:DeleteUserConfirmationView>
